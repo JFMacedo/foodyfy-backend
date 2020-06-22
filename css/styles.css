@@ -1,0 +1,186 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap');
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Roboto', sans-serif;
+  color: #111111;
+}
+
+html, body {
+  height: 100%;
+}
+
+body {
+  background-color: #F0F6F3;
+}
+
+a {
+  text-decoration: none;
+}
+
+h1 {
+  font-size: 32px;
+  margin-bottom: 10px;
+}
+
+h2 {
+  font-size: 24px;
+  margin-bottom: 20px;
+}
+
+h3 {
+  font-size: 18px;
+  font-weight: 400;
+}
+
+header {
+  display: flex;
+  align-items: center;
+  width: 100%;
+  padding: 30px 0;
+}
+
+header nav {
+  margin-left: 123px;
+}
+
+header nav a {
+  position: relative;
+  margin-right: 30px;
+}
+
+header nav a:hover {
+  font-weight: 700;
+}
+
+#page-home, #page-about, #page-recipes {
+  max-width: 940px;
+  margin: 0 auto;
+}
+
+.banner {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  width: 100%;
+  height: 366px;
+  padding: 60px;
+  border-radius: 30px;
+  background-image: url('../assets/chef.png');
+  background-repeat: no-repeat;
+  background-position: bottom right 100px;
+  background-color: #FBDFDB;
+}
+
+.banner p {
+  width: 320px;
+  font-size: 18px;
+  line-height: 28px;
+}
+
+.most-accessed {
+  padding: 50px 0;
+}
+
+.recipes {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  gap: 20px;
+}
+
+.recipe img {
+  width: 100%;
+  margin-bottom: 20px;
+  border-radius: 15px;
+}
+
+.recipe p {
+  font-size: 14px;
+  line-height: 24px;
+  color: #777777;
+}
+
+footer {
+  padding: 23px 0;
+  text-align: center;
+  font-size: 14px;
+  color: #999999;
+  background-color: #EEEEEE;
+}
+
+/* Page-about */
+#page-about section {
+  padding: 20px 0;
+}
+
+#page-about h3 {
+  margin-bottom: 20px;
+  font-size: 20px;
+  font-weight: 700;
+}
+
+#page-about p {
+  margin-bottom: 30px;
+  font-size: 18px;
+  line-height: 28px;
+}
+
+/* Page-recipes */
+#page-recipes .recipes {
+  margin: 20px 0 50px;
+}
+
+/* Modal */
+.modal-overlay.active {
+  opacity: 1;
+  visibility: visible;
+}
+
+.modal-overlay {
+  opacity: 0;
+  visibility: hidden;
+  position: fixed;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: #00000099;
+  transition: 400ms;
+}
+
+.modal-overlay .modal {
+  padding: 30px;
+  text-align: center;
+  border-radius: 16px;
+  background-color: #F0F6F3;
+}
+
+.modal-overlay .modal img {
+  margin-bottom: 20px;
+  width: 600px;
+  height: 200px;
+  object-fit: cover;
+  border-radius: 15px;
+}
+
+.modal-overlay .modal h2 {
+  margin-bottom: 5px;
+  font-weight: 400;
+}
+
+.modal-overlay .modal p {
+  margin-bottom: 60px;
+  font-size: 18px;
+  color: #777777;
+}
+
+.modal-overlay .modal a {
+  font-size: 16px;
+  cursor: pointer;
+  color: #999999;
+}
