@@ -1,24 +1,7 @@
-<!DOCTYPE html>
-<html lang="pt-BR">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Foodfy - receitas</title>
-  <link rel="stylesheet" href="css/styles.css">
-</head>
-<body>
-  <div id="page-recipes">
-    <header>
-      <div class="logo">
-        <a href="index.html"><img src="assets/logo.png" alt="logo"></a>
-      </div><!--logo-->
-  
-      <nav>
-        <a href="about.html">Sobre</a>
-        <a href="recipes.html" style="font-weight: 700;">Receitas</a>
-      </nav>
-    </header>
+{% extends "layout.njk" %}
 
+{% block content %}
+  <div id="page-recipes">
     <div class="recipes">
       <div class="recipe">
         <img src="assets/burger.png" alt="burguer">
@@ -93,20 +76,10 @@
       </div><!--recipe-->
     </div><!--recipes-->
   </div><!--page-recipes-->
-  
-  <footer>
-    <p>&copy; Todos direitos reservados, receitas Foodfy.</p>
-  </footer>
 
-  <div class="modal-overlay">
-    <div class="modal">
-      <img src="" alt="">
-      <h2></h2>
-      <p></p>
-      <a class="close-modal">Fechar modal</a>
-    </div><!--modal-->
-  </div><!--modal-overlay-->
+  {% include "modal.njk" %}
+{% endblock %}
 
+{% block scripts %}
   <script src="scripts/scripts.js"></script>
-</body>
-</html>
+{% endblock %}
