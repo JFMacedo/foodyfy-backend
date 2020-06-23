@@ -14,11 +14,11 @@ O projeto foi desenvolvido utilizando as seguintes tecnologias:
 - HTML
 - CSS
 - JavaScript
+- NodeJS
 
 ---
 
 ## 📔 Como utilizar
 ```bach
-  $ git clone https://github.com/JFMacedo/foodfy-frontend.git
+  
 ```
-- executar arquivo index.html
