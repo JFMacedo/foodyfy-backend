@@ -1,5 +1,6 @@
 const express = require('express');
 const nunjucks = require('nunjucks');
+const recipes = require('./data');
 
 const server = express();
 
@@ -11,7 +12,7 @@ nunjucks.configure('views', {
 });
 
 server.get('/', (req, res) => {
-  res.render('index.njk', { active: '' });
+  res.render('index.njk', { active: '', recipes: recipes });
 });
 
 server.get('/about', (req, res) => {
@@ -19,7 +20,11 @@ server.get('/about', (req, res) => {
 })
 
 server.get('/recipes', (req, res) => {
-  res.render('recipes.njk', { active: 'recipes' });
+  res.render('recipes.njk', { active: 'recipes', recipes: recipes });
 })
+
+server.use(function(req, res) {
+  res.status(404).render("not-found.njk");
+});
 
 server.listen(3000);
