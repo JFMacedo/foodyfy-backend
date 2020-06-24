@@ -21,6 +21,20 @@ server.get('/about', (req, res) => {
 
 server.get('/recipes', (req, res) => {
   res.render('recipes.njk', { active: 'recipes', recipes: recipes });
+});
+
+server.get("/recipes/:index", function (req, res) {
+  const recipeIndex = req.params.index;
+
+  const recipe = recipes.find((recipe) => {
+    return recipe.id == recipeIndex
+  });
+
+  if(!recipe) {
+    return res.render('not-found.njk')
+  }
+
+  return res.render('recipe.njk', { recipe });
 })
 
 server.use(function(req, res) {

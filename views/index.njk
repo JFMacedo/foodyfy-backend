@@ -13,20 +13,20 @@
       <div class="recipes">
 
         {% for recipe in recipes %}
-          {% if recipe.mostAccessed %}
-            <div class="recipe">
-              <img src="{{ recipe.img }}" alt="{{ recipe.title }}">
+
+          {% if recipe.id <= 6 %}
+            <div class="recipe" id="{{ recipe.id }}">
+              <img src="{{ recipe.image }}" alt="{{ recipe.title }}">
               <h3>{{ recipe.title }}</h3>
               <p>por {{ recipe.author }}</p>
             </div><!--recipe-->
           {% endif %}
+          
         {% endfor %}
 
       </div><!--recipes-->
     </section><!--most-accessed-->
   </div><!--page-home-->
-
-  {% include "modal.njk" %}
 {% endblock %}
 
 {% block scripts %}

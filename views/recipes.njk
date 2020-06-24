@@ -1,12 +1,16 @@
 {% extends "layout.njk" %}
 
+{% block head %}
+  <title>Foodfy - Receitas</title>
+{% endblock %}
+
 {% block content %}
   <div id="page-recipes">
     <div class="recipes">
 
       {% for recipe in recipes %}
-        <div class="recipe">
-          <img src="{{ recipe.img }}" alt="{{ recipe.title }}">
+        <div class="recipe" id="{{ recipe.id }}">
+          <img src="{{ recipe.image }}" alt="{{ recipe.title }}">
           <h3>{{ recipe.title }}</h3>
           <p>por {{ recipe.author }}</p>
         </div><!--recipe-->
@@ -14,8 +18,6 @@
 
     </div><!--recipes-->
   </div><!--page-recipes-->
-
-  {% include "modal.njk" %}
 {% endblock %}
 
 {% block scripts %}

@@ -1,20 +1,21 @@
-const modalOverlay = document.querySelector('.modal-overlay')
-const recipes = document.querySelectorAll('.recipe')
+const modalOverlay = document.querySelector('.modal-overlay');
+const recipes = document.querySelectorAll('.recipe');
+const informations = document.querySelectorAll('.information');
+
 for(let recipe of recipes) {
   recipe.addEventListener('click', () => {
-    modalOverlay.classList.add('active')
-    modalOverlay.querySelector('img').src = recipe.querySelector('img').src
-    modalOverlay.querySelector('h2').innerText = recipe.querySelector('h3').innerText
-    modalOverlay.querySelector('p').innerText = recipe.querySelector('p').innerText
-  })
+    window.location.href = `/recipes/${recipe.id}`
+  });
 }
 
-document.querySelector('.close-modal')
-  .addEventListener('click', () => {
-    modalOverlay.classList.remove('active')
-    setTimeout(() => {
-      modalOverlay.querySelector('img').src = ''
-      modalOverlay.querySelector('h2').innerText = ''
-      modalOverlay.querySelector('p').innerText = ''
-    }, 400)
-  })
+for(let information of informations) {
+  const span = information.querySelector('span');
+  span.addEventListener('click', () => {
+    information.classList.toggle('hide');
+    if(span.innerText == 'ESCONDER') {
+      span.innerText = 'MOSTRAR'
+    } else {
+      span.innerText = 'ESCONDER'
+    }
+  });
+}

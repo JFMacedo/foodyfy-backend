@@ -61,9 +61,10 @@ header nav a:hover {
   font-weight: 700;
 }
 
-#page-home, #page-about, #page-recipes {
+#page-home, #page-about, #page-recipes, #page-recipe {
   max-width: 940px;
   margin: 0 auto;
+  min-height: calc(100% - 153px);
 }
 
 .banner {
@@ -145,62 +146,59 @@ footer {
   display: flex;
   align-items: center;
   justify-content: center;
-  height: calc(100% - 160px);
+  height: calc(100% - 153px);
 }
 
 #page-not-found a:hover {
   font-weight: 700;
 }
 
-/* Modal */
-.modal-overlay.active {
-  opacity: 1;
-  visibility: visible;
+/* Page-recipe */
+#page-recipe {
+  padding-bottom: 50px;
 }
 
-.modal-overlay {
-  opacity: 0;
-  visibility: hidden;
-  position: fixed;
-  top: 0;
-  bottom: 0;
-  left: 0;
-  right: 0;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  background-color: #00000099;
-  transition: 400ms;
-}
-
-.modal-overlay .modal {
-  padding: 30px;
-  text-align: center;
-  border-radius: 16px;
-  background-color: #F0F6F3;
-}
-
-.modal-overlay .modal img {
-  margin-bottom: 20px;
-  width: 600px;
-  height: 200px;
-  object-fit: cover;
+#page-recipe img {
+  width: 100%;
+  height: 280px;
+  margin-bottom: 50px;
   border-radius: 15px;
 }
 
-.modal-overlay .modal h2 {
+#page-recipe h1 {
+  font-size: 36px;
   margin-bottom: 5px;
-  font-weight: 400;
+  text-align: center;
 }
 
-.modal-overlay .modal p {
-  margin-bottom: 60px;
-  font-size: 18px;
+#page-recipe h3 {
+  font-size: 20px;
+  text-align: center;
   color: #777777;
 }
 
-.modal-overlay .modal a {
-  font-size: 16px;
+#page-recipe h2 {
+  margin-top: 40px;
+}
+
+#page-recipe h2 span {
+  font-size: 12px;
   cursor: pointer;
   color: #999999;
+}
+
+#page-recipe li, #page-recipe p {
+  font-size: 18px;
+  line-height: 28px;
+  color: #444444;
+}
+
+#page-recipe .data {
+  overflow: hidden;
+  max-height: 1000px;
+  transition: 400ms;
+}
+
+#page-recipe .information.hide .data {
+  max-height: 0;
 }
