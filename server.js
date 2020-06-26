@@ -8,6 +8,7 @@ server.use(express.static('public'));
 
 nunjucks.configure('views', {
   express: server,
+  autoescape: false,
   noCache: true
 });
 
